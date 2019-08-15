@@ -17,22 +17,24 @@ public class P3LongestSubstring
                 continue;
             }
 
-            StringBuilder sb = new StringBuilder(s.charAt(i));
+            StringBuilder sb = new StringBuilder();
+            sb.append(s.charAt(i));
 
             while (j < s.length())
             {
                 if (sb.indexOf(s.substring(j, j+1)) < 0)
                 {
                     sb.append(s.charAt(j));
-                }
-                else //发生重复
-                {
                     if (sb.length() > max)
                     {
                         max = sb.length();
                     }
+                }
+                else //发生重复
+                {
                     break;
                 }
+
                 j++;
             }
         }
@@ -42,7 +44,7 @@ public class P3LongestSubstring
 
     public static void main(String[] args)
     {
-        System.out.println(lengthOfLongestSubstring("pwwkew"));
+        System.out.println(lengthOfLongestSubstring("au"));
     }
 
 }
